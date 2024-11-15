@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    border: 0;
+    outline: 0;
+    text-decoration: none;
+    list-style: none;
+}
+:root{
+    --white: #fff;
+    --black: #000;
+    --pri-color: #a2c24f;
+    --sec-color: #f88da8;
+}
+
+html{
+    font-size: 10px;
+}
+body{
+    font-family: "Dosis", sans-serif;
+    background-image: url(question.avif);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.quiz-container{
+    background-color: var(--white);
+    border-radius: 1rem;
+    box-shadow: 0 0 10px var(--black);
+    width: 60rem;
+}
+
+.quiz-header{
+    padding: 4rem;
+}
+h1{
+    font-size: 4rem;
+    text-shadow: 2px 2px var(--white);
+    margin-bottom: 1.4rem;
+}
+h2{
+    padding: 1rem;
+    font-size: 3rem;
+}
+ul li{
+    font-size: 1.6rem;
+    margin: 1rem 0;
+}
+ul li label{
+    padding: 1rem;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 1rem;
+    font-weight: 500;
+    transition: .3s ease;
+}
+ul li label:hover{
+    background-color: #ded;
+}
+.submit{
+    background-color: var(--pri-color);
+    font-weight: bold;
+    font-size: 2.5rem;
+    display: block;
+    width: 100%;
+    border-radius: 0 0 1rem 1rem;
+    padding: 1rem;
+    font-family: inherit;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+#submit:focus::after{
+    content: ', Son Kararım ┼';
+}
+#submit:focus{
+    background-color: var(--sec-color);
+}
+
+[type="radio"]:checked,
+[type="radio"]:not(:checked){
+    display: none;
+}
+
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label{
+    position: relative;
+    padding-left: 2.4rem;
+    cursor: pointer;
+}
+[type="radio"]:checked + label::before,
+[type="radio"]:not(:checked) + label::before{
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 1.2rem;
+    border: 1px solid gray;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+}
+[type="radio"]:checked + label::after,
+[type="radio"]:not(:checked) + label::after{
+    content: '';
+    position: absolute;
+    top: 14.3px;
+    left: 7.4px;
+    width: 0.9rem;
+    height: 0.9rem;
+    border-radius: 50%;
+    background-color: var(--sec-color);
+    transition: 0.3s ease;
+}
+
+[type="radio"]:not(:checked) + label::after{
+    opacity: 0;
+}
+
+[type="radio"]:checked + label::after{
+    opacity: 1;
+}
+
+@media screen and (max-width :1000px){
+    html{
+        font-size: 8px;
+    }
+    [type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label{
+    position: relative;
+    padding-left: 2.4rem;
+    cursor: pointer;
+}
+[type="radio"]:checked + label::before,
+[type="radio"]:not(:checked) + label::before{
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 1.2rem;
+    border: 1px solid gray;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+}
+[type="radio"]:checked + label::after,
+[type="radio"]:not(:checked) + label::after{
+    content: '';
+    position: absolute;
+    top: 11.7px;
+    left: 7.1px;
+    width: 0.9rem;
+    height: 0.9rem;
+    border-radius: 50%;
+    background-color: var(--sec-color);
+    transition: 0.3s ease;
+}
+}
+
+@media screen and (max-width :600px){
+    html{
+        font-size: 6px;
+    }
+    [type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label{
+    position: relative;
+    padding-left: 2.4rem;
+    cursor: pointer;
+}
+[type="radio"]:checked + label::before,
+[type="radio"]:not(:checked) + label::before{
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 1.2rem;
+    border: 1px solid gray;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+}
+[type="radio"]:checked + label::after,
+[type="radio"]:not(:checked) + label::after{
+    content: '';
+    position: absolute;
+    top: 9px;
+    left: 7px;
+    width: 0.9rem;
+    height: 0.9rem;
+    border-radius: 50%;
+    background-color: var(--sec-color);
+    transition: 0.3s ease;
+}
+}
+
+
